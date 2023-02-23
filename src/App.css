@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(8, 8, 8);
+  --x-position: 0;
 }
 
 .App-logo {
@@ -11,6 +19,10 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+
+  /* .right {
+    animation: move-right 1 1s linear;
+  } */
 }
 
 .App-header {
@@ -34,5 +46,66 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+/* 
+@keyframes move-right {
+  from {
+    transform: translateX((var(--x-position))px);
+  }
+  to {
+    transform: translateX((calc(var(--x-position) + 100))px);
+  } */
+/* } */
+.ball {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(35, 35, 173);
+
+  border-radius: 50%;
+  transition: background-image 0.11s;
+}
+
+.ball.right {
+  background-image: url("../src/images/ball_right.png");
+}
+
+.ball.left {
+  background-image: url("../src/images/ball_left.png");
+}
+
+.ball.up {
+  background-image: url("../src/images/ball1.png");
+}
+
+.ball.down {
+  background-image: url("../src/images/ball_forward.png");
+}
+
+.jump-right.right {
+  animation: Jump-Right 1 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes Jump-Right {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  14% {
+    transform: scaleY(0.8) scaleX(1.2) translateY(4px);
+  }
+  20% {
+    transform: translateX(50px) translateY(-80px) scaleY(1.2) scaleX(0.8);
+  }
+  50% {
+    transform: translateX(70px) translateY(-100px) scaleY(1) scaleX(1);
+  }
+  80% {
+    transform: translateX(90px) translateY(-80px) scaleY(1.2) scaleX(0.8);
+  }
+  96% {
+    transform: scaleY(0.8) scaleX(1.2) translateY(4px) translateX(120px);
+  }
+  100% {
+    transform: translateX(140px) translateY(0px);
   }
 }
