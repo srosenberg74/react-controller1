@@ -5,8 +5,6 @@ function Ball() {
   const [controllerClass, setControllerClass] = useState("down");
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  // const [x, setX] = useState(0);
-  // const [y, setY] = useState(0);
   const ballRef = useRef();
   let commands = [];
   const movementSpeed = 30;
@@ -115,38 +113,6 @@ function Ball() {
         setPosition({ ...position, y: position.y + movementSpeed });
       }
     }
-    // clearInterval(interval);
-
-    // case "ArrowRight":
-    //   setControllerClass("right");
-    //   ballRef.current.style.transform = `translateX(${
-    //     position.x + movementSpeed
-    //   }px) translateY(${position.y}px)`;
-    //   setPosition({ ...position, x: position.x + movementSpeed });
-    //   break;
-    // case "ArrowLeft":
-    //   setControllerClass("left");
-    //   ballRef.current.style.transform = `translateX(${
-    //     position.x - movementSpeed
-    //   }px) translateY(${position.y}px)`;
-    //   setPosition({ ...position, x: position.x - movementSpeed });
-    //   break;
-    // case "ArrowUp":
-    //   setControllerClass("up");
-    //   ballRef.current.style.transform = `translateY(${
-    //     position.y - movementSpeed
-    //   }px) translateX(${position.x}px)`;
-    //   setPosition({ ...position, y: position.y - movementSpeed });
-    //   break;
-    // case "ArrowDown":
-    //   setControllerClass("down");
-    //   ballRef.current.style.transform = `translateY(${
-    //     position.y + movementSpeed
-    //   }px) translateX(${position.x}px)`;
-    //   setPosition({ ...position, y: position.y + movementSpeed });
-    //   break;
-    // default:
-    //   break;
   };
 
   useEffect(() => {
